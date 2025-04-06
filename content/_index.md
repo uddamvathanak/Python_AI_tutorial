@@ -12,27 +12,13 @@ While many resources cover Python, this guide cuts through the noise, concentrat
 ## Your Learning Path: From Python Basics to AI Projects
 
 {{< cards >}}
-  {{< card title="1. Python Fundamentals for AI" icon="terminal" link="/docs/python-basics/" >}}
-    Get started with the essential Python syntax and concepts for AI.
-  {{< /card >}}
-  {{< card title="2. Data Wrangling & Analysis: NumPy & Pandas" icon="grid" link="/docs/numpy-pandas/" >}}
-    Learn to manipulate and analyze data effectively using NumPy and Pandas.
-  {{< /card >}}
-  {{< card title="3. Machine Learning with Scikit-Learn" icon="sliders" link="/docs/sklearn/" >}}
-    Explore core machine learning algorithms and evaluation techniques.
-  {{< /card >}}
-  {{< card title="4. Deep Learning Introduction: PyTorch" icon="cpu" link="/docs/pytorch/" >}}
-    Dive into the basics of neural networks with PyTorch.
-  {{< /card >}}
-  {{< card title="5. Natural Language Processing (NLP) Essentials" icon="message-circle" link="/docs/nlp/" >}}
-    Understand techniques for processing and analyzing text data.
-  {{< /card >}}
-  {{< card title="6. Computer Vision (CV) Basics" icon="camera" link="/docs/cv/" >}}
-    Get introduced to image processing and computer vision concepts.
-  {{< /card >}}
-  {{< card title="7. Capstone Project: Customer Churn Prediction" icon="clipboard" link="/docs/project/" >}}
-    Apply your skills to a real-world AI project example.
-  {{< /card >}}
+  {{< card title="1. Python Fundamentals for AI" link="/docs/python-basics/" description="Get started with the essential Python syntax and concepts for AI." >}}
+  {{< card title="2. Data Wrangling & Analysis: NumPy & Pandas" link="/docs/numpy-pandas/" description="Learn to manipulate and analyze data effectively using NumPy and Pandas." >}}
+  {{< card title="3. Machine Learning with Scikit-Learn" link="/docs/sklearn/" description="Explore core machine learning algorithms and evaluation techniques." >}}
+  {{< card title="4. Deep Learning Introduction: PyTorch" link="/docs/pytorch/" description="Dive into the basics of neural networks with PyTorch." >}}
+  {{< card title="5. Natural Language Processing (NLP) Essentials" link="/docs/nlp/" description="Understand techniques for processing and analyzing text data." >}}
+  {{< card title="6. Computer Vision (CV) Basics" link="/docs/cv/" description="Get introduced to image processing and computer vision concepts." >}}
+  {{< card title="7. Capstone Project: Customer Churn Prediction" link="/docs/project/" description="Apply your skills to a real-world AI project example." >}}
 {{< /cards >}}
 
 ## Latest Updates
@@ -48,13 +34,13 @@ This tutorial aims to equip beginners and those transitioning careers with the v
 
 *This site is built using [Hugo](https://gohugo.io/) and the [Hextra](https://github.com/imfing/hextra) theme.*
 
-## Explore
+<!-- ## Explore
 
 {{< cards >}}
   {{< card link="docs" title="Docs" icon="book-open" >}}
   {{< card link="about" title="About" icon="user" >}}
 {{< /cards >}}
 
-## Documentation
+## Documentation -->
 
 For more information, visit [Hextra](https://imfing.github.io/hextra).

@@ -33,14 +33,19 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      url: "https://github.com/uddamvathanak"
       params:
         icon: github
-    - name: Twitter
+    - name: LinkedIn
       weight: 6
-      url: "https://twitter.com/"
+      url: "https://www.linkedin.com/in/rom-uddamvathanak/"
       params:
-        icon: x-twitter
+        icon: linkedin
+    # - name: Twitter
+    #   weight: 6
+    #   url: "https://twitter.com/"
+    #   params:
+    #     icon: x-twitter
 
 params:
   navbar:

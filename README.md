@@ -2,7 +2,7 @@
 
 **Ready to break into the exciting fields of Artificial Intelligence (AI), Machine Learning (ML), and Data Science?** This tutorial website provides a focused, practical guide to the essential Python skills you need to get started.
 
-➡️ **[Visit the Tutorial Website!](https://uddamvathanak.github.io/)** ⬅️
+➡️ **[Visit the Tutorial Website!](https://uddamvathanak.github.io/Python_AI_tutorial/)** ⬅️
 
 While many resources cover Python, this guide cuts through the noise, concentrating on the core libraries and concepts crucial for real-world AI applications. Learn the foundational Python, data manipulation techniques (NumPy, Pandas), machine learning fundamentals (scikit-learn), deep learning basics (PyTorch), NLP, and computer vision essentials to build a strong base for your AI journey.
 

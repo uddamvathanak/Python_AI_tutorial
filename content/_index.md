@@ -9,21 +9,36 @@ While many resources cover Python, this guide cuts through the noise, concentrat
 
 ## Your Learning Path: From Python Basics to AI Projects
 
-{{< cards >}}
-  {{< card title="Get Started" link="../docs/getting-started/" description="Set up your Python environment and learn how to follow the tutorials." >}}
-  {{< card title="1. Python Fundamentals for AI" link="../docs/python-basics/" description="Get started with the essential Python syntax and concepts for AI." >}}
-  {{< card title="2. Data Wrangling & Analysis: NumPy & Pandas" link="../docs/numpy-pandas" description="Learn to manipulate and analyze data effectively using NumPy and Pandas." >}}
-  {{< card title="3. Machine Learning with Scikit-Learn" link="../docs/sklearn/" description="Explore core machine learning algorithms and evaluation techniques." >}}
-  {{< card title="4. Deep Learning Introduction: PyTorch" link="../docs/pytorch/" description="Dive into the basics of neural networks with PyTorch." >}}
-  {{< card title="5. Natural Language Processing (NLP) Essentials" link="../docs/nlp/" description="Understand techniques for processing and analyzing text data." >}}
-  {{< card title="6. Computer Vision (CV) Basics" link="../docs/cv/" description="Get introduced to image processing and computer vision concepts." >}}
-  {{< card title="7. Capstone Project: Customer Churn Prediction" link="../docs/project/" description="Apply your skills to a real-world AI project example." >}}
-{{< /cards >}}
+{{% steps %}}
+
+### Setup Environment
+[Set up your Python environment](/docs/getting-started/) using Miniconda or Google Colab.
+
+### Python Basics
+Learn the [essential Python syntax](/docs/python-basics/) needed for AI applications.
+
+### NumPy & Pandas
+Master [data manipulation and analysis](/docs/numpy-pandas/) with these core libraries.
+
+### Scikit-Learn
+Explore [fundamental machine learning concepts](/docs/sklearn/) and algorithms.
+
+### PyTorch
+Get introduced to [deep learning basics](/docs/pytorch/) and build neural networks.
+
+### NLP Essentials
+Understand techniques for [processing text data](/docs/nlp/).
+
+### Computer Vision Basics
+Learn the fundamentals of [image processing and analysis](/docs/cv/).
+
+### Capstone Project
+Apply your skills to a [customer churn prediction project](/docs/project/).
+
+{{% /steps %}}
 
 ---
 
 This tutorial aims to equip beginners and those transitioning careers with the vital Python knowledge needed to confidently step into the world of AI.
 
 *This site is built using [Hugo](https://gohugo.io/) and the [Hextra](https://github.com/imfing/hextra) theme.*
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).

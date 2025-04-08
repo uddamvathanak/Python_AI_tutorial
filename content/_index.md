@@ -10,14 +10,14 @@ While many resources cover Python, this guide cuts through the noise, concentrat
 ## Your Learning Path: From Python Basics to AI Projects
 
 {{< cards >}}
-  {{< card title="Get Started"  link="/docs/getting-started/" description="Set up your Python environment and learn how to follow the tutorials." >}}
-  {{< card title="1. Python Fundamentals for AI" link="/docs/python-basics/" description="Get started with the essential Python syntax and concepts for AI." >}}
-  {{< card title="2. Data Wrangling & Analysis: NumPy & Pandas" link="/docs/numpy-pandas/" description="Learn to manipulate and analyze data effectively using NumPy and Pandas." >}}
-  {{< card title="3. Machine Learning with Scikit-Learn" link="/docs/sklearn/" description="Explore core machine learning algorithms and evaluation techniques." >}}
-  {{< card title="4. Deep Learning Introduction: PyTorch" link="/docs/pytorch/" description="Dive into the basics of neural networks with PyTorch." >}}
-  {{< card title="5. Natural Language Processing (NLP) Essentials" link="/docs/nlp/" description="Understand techniques for processing and analyzing text data." >}}
-  {{< card title="6. Computer Vision (CV) Basics" link="/docs/cv/" description="Get introduced to image processing and computer vision concepts." >}}
-  {{< card title="7. Capstone Project: Customer Churn Prediction" link="/docs/project/" description="Apply your skills to a real-world AI project example." >}}
+  {{< card title="Get Started" link="Python_AI_tutorial/docs/getting-started/" description="Set up your Python environment and learn how to follow the tutorials." >}}
+  {{< card title="1. Python Fundamentals for AI" link="Python_AI_tutorial/docs/python-basics/" description="Get started with the essential Python syntax and concepts for AI." >}}
+  {{< card title="2. Data Wrangling & Analysis: NumPy & Pandas" link="Python_AI_tutorial/docs/numpy-pandas/" description="Learn to manipulate and analyze data effectively using NumPy and Pandas." >}}
+  {{< card title="3. Machine Learning with Scikit-Learn" link="Python_AI_tutorial/docs/sklearn/" description="Explore core machine learning algorithms and evaluation techniques." >}}
+  {{< card title="4. Deep Learning Introduction: PyTorch" link="Python_AI_tutorial/docs/pytorch/" description="Dive into the basics of neural networks with PyTorch." >}}
+  {{< card title="5. Natural Language Processing (NLP) Essentials" link="Python_AI_tutorial/docs/nlp/" description="Understand techniques for processing and analyzing text data." >}}
+  {{< card title="6. Computer Vision (CV) Basics" link="Python_AI_tutorial/docs/cv/" description="Get introduced to image processing and computer vision concepts." >}}
+  {{< card title="7. Capstone Project: Customer Churn Prediction" link="Python_AI_tutorial/docs/project/" description="Apply your skills to a real-world AI project example." >}}
 {{< /cards >}}
 
 ---

@@ -12,28 +12,28 @@ While many resources cover Python, this guide cuts through the noise, concentrat
 {{% steps %}}
 
 ### Setup Environment
-[Set up your Python environment](/docs/getting-started/) using Miniconda or Google Colab.
+[Set up your Python environment](../docs/getting-started/) using Miniconda or Google Colab.
 
 ### Python Basics
-Learn the [essential Python syntax](/docs/python-basics/) needed for AI applications.
+Learn the [essential Python syntax](../docs/python-basics/) needed for AI applications.
 
 ### NumPy & Pandas
-Master [data manipulation and analysis](/docs/numpy-pandas/) with these core libraries.
+Master [data manipulation and analysis](../docs/numpy-pandas/) with these core libraries.
 
 ### Scikit-Learn
-Explore [fundamental machine learning concepts](/docs/sklearn/) and algorithms.
+Explore [fundamental machine learning concepts](../docs/sklearn/) and algorithms.
 
 ### PyTorch
-Get introduced to [deep learning basics](/docs/pytorch/) and build neural networks.
+Get introduced to [deep learning basics](../docs/pytorch/) and build neural networks.
 
 ### NLP Essentials
-Understand techniques for [processing text data](/docs/nlp/).
+Understand techniques for [processing text data](../docs/nlp/).
 
 ### Computer Vision Basics
-Learn the fundamentals of [image processing and analysis](/docs/cv/).
+Learn the fundamentals of [image processing and analysis](../docs/cv/).
 
 ### Capstone Project
-Apply your skills to a [customer churn prediction project](/docs/project/).
+Apply your skills to a [customer churn prediction project](../docs/project/).
 
 {{% /steps %}}
 

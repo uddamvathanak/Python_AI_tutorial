@@ -1,6 +1,5 @@
 ---
 title: "7. Capstone Project: Customer Churn Prediction"
-draft: true
 weight: 70
 ---
 

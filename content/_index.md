@@ -20,25 +20,10 @@ While many resources cover Python, this guide cuts through the noise, concentrat
   {{< card title="7. Capstone Project: Customer Churn Prediction" link="/docs/project/" description="Apply your skills to a real-world AI project example." >}}
 {{< /cards >}}
 
-## Latest Content Update
-
-This page was last updated on: **{{ .Lastmod.Format "January 2, 2006" }}**
-
-(More content is actively being developed!)
-
 ---
 
 This tutorial aims to equip beginners and those transitioning careers with the vital Python knowledge needed to confidently step into the world of AI.
 
 *This site is built using [Hugo](https://gohugo.io/) and the [Hextra](https://github.com/imfing/hextra) theme.*
-
-<!-- ## Explore
-
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation -->
 
 For more information, visit [Hextra](https://imfing.github.io/hextra).

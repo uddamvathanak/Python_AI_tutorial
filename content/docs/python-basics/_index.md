@@ -5,6 +5,11 @@ weight: 10
 
 Welcome to the first module! Before diving into complex AI libraries, it's crucial to have a solid grasp of Python's fundamentals. Python's clear syntax and vast ecosystem make it the primary language for AI, Machine Learning, and Data Science. This section covers the essential building blocks you'll use constantly.
 
+{{< callout type="info" >}}
+**Interactive Practice:**
+You can copy the code examples from this page and run them in your own Jupyter Notebook environment (either running locally or using a cloud service like [Google Colab](https://colab.research.google.com/)). This is a great way to experiment and solidify your understanding!
+{{< /callout >}}
+
 ## Variables and Data Types
 
 Variables are used to store information that your program can manipulate. In Python, you assign a value to a variable name using the equals sign (`=`). Python automatically determines the data type based on the value assigned.

@@ -5,6 +5,15 @@ weight: 10
 
 Welcome to the first module! Before diving into complex AI libraries, it's crucial to have a solid grasp of Python's fundamentals. Python's clear syntax and vast ecosystem make it the primary language for AI, Machine Learning, and Data Science. This section covers the essential building blocks you'll use constantly.
 
+### Learning Objectives
+After this module, you will be able to:
+*   Declare variables and identify common Python data types (`int`, `float`, `str`, `bool`, `list`, `dict`).
+*   Control program flow using `if`/`elif`/`else` statements and `for`/`while` loops.
+*   Define and call your own functions.
+*   Import and use modules and libraries.
+*   Understand the basic concepts of classes and objects.
+*   Perform basic file reading and writing operations.
+
 {{< callout type="info" >}}
 **Interactive Practice:**
 You can copy the code examples from this page and run them in your own Jupyter Notebook environment (either running locally or using a cloud service like [Google Colab](https://colab.research.google.com/)). This is a great way to experiment and solidify your understanding!
@@ -37,6 +46,7 @@ hyperparameters = {       # dict
 
 print(f"Model: {model_name}, Learning Rate: {learning_rate}")
 print(f"Features: {feature_list}")
+# (Note: We use f-strings (formatted string literals, like f"...") for easily embedding variable values within strings.)
 ```
 
 {{< callout type="tip" >}}
@@ -104,7 +114,8 @@ def preprocess_data(raw_data):
   """Cleans and prepares the input data.""" # Docstring explaining the function
   print(f"Preprocessing {len(raw_data)} data points...")
   # --- Actual preprocessing steps would go here ---
-  processed = [item * 10 for item in raw_data] # Example step
+  processed = [item * 10 for item in raw_data] # Example step (using a List Comprehension)
+  # List comprehensions provide a concise way to create lists.
   return processed
 
 data = [1, 2, 3, 4]
@@ -189,7 +200,7 @@ The `with open(...) as ...:` syntax is the standard, safe way to work with files
 
 ```python
 # Example: Writing model performance logs
-try:
+try: # The try block lets you test a block of code for errors.
     with open("training_log.txt", "w") as log_file: # 'w' = write (overwrites)
         log_file.write("Epoch 1: Accuracy=0.85\n")
         log_file.write("Epoch 2: Accuracy=0.88\n")
@@ -205,7 +216,7 @@ try:
         log_content = log_file.read()
         print(log_content)
 
-except IOError as e:
+except IOError as e: # The except block handles the error if one occurs in the try block.
     print(f"An error occurred during file operation: {e}")
 
 ```
@@ -214,8 +225,46 @@ except IOError as e:
 Always use `with open(...)`! It ensures the file is properly closed automatically, even if errors occur during reading or writing. For structured data like CSV or JSON, libraries like Pandas offer much more powerful and convenient loading functions, which we'll see later.
 {{< /callout >}}
 
+## Practice Exercises (Take-Home Style)
+
+Try these exercises on your own to reinforce the concepts:
+
+1.  **Model Configuration:** Create a Python dictionary named `model_config` to store the following hyperparameters: `learning_rate` (set to `0.05`), `optimizer` (set to `'SGD'`), `epochs` (set to `100`), and `layers` (a list containing the strings `'input'`, `'dense_128'`, `'output'`). Print the dictionary.
+    *   _Expected Result:_ The printed output should look similar to this (order of keys might vary):
+        ```
+        {'learning_rate': 0.05, 'optimizer': 'SGD', 'epochs': 100, 'layers': ['input', 'dense_128', 'output']}
+        ```
+
+2.  **Accuracy Check:** Write an `if/else` statement that checks if a variable `test_accuracy` (assign it a value, e.g., `0.65`) is greater than `0.75`. Print "Model passed!" if it is, and "Model failed." otherwise.
+    *   _Expected Result (for `test_accuracy = 0.65`):_ `Model failed.`
+    *   _Expected Result (if you try `test_accuracy = 0.80`):_ `Model passed!`
+
+3.  **Simple Function:** Define a function called `add_two_numbers` that takes two arguments (`num1`, `num2`) and returns their sum. Call the function with `5` and `10` and print the result.
+    *   _Expected Result:_ `15`
+
+4.  **Looping:** Write a `for` loop that iterates through the `layers` list you created in Exercise 1 and prints each layer name.
+    *   _Expected Result:_ The output should print each layer name on a new line:
+        ```
+        input
+        dense_128
+        output
+        ```
+
+5.  **File Writing:** Use the `with open(...)` syntax to create a new file named `results.txt` and write the string "Training complete." into it.
+    *   _Expected Result:_ No direct output printed to the console, but a new file named `results.txt` should be created in the same directory where you run the script, containing the text "Training complete.".
+
+*(Feel free to experiment and modify these exercises!)*
+
 ## Summary
 
 You've covered the essential Python syntax and structures: variables & types, control flow, functions & modules, basic OOP concepts, and file I/O. These are the tools you'll use in almost every AI script or notebook.
+
+## Additional Resources
+
+For further learning or different perspectives on these fundamental concepts, check out these excellent resources:
+
+*   **[The Official Python Tutorial](https://docs.python.org/3/tutorial/index.html):** The definitive source, covering everything in great detail.
+*   **[Codecademy - Learn Python 3](https://www.codecademy.com/learn/learn-python-3):** Offers interactive exercises for learning Python syntax.
+*   **[freeCodeCamp - Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/):** Includes a comprehensive Python curriculum often used for data science foundations.
 
 **Next:** Ready to handle data efficiently? Proceed to [Module 2: Data Wrangling & Analysis: NumPy & Pandas](/docs/numpy-pandas/). 

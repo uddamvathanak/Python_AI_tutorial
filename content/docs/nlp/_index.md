@@ -137,15 +137,29 @@ One of the most common NLP tasks.
 
 ```python
 # Conceptual ML approach (using vectors from previous step)
-# Assume X_tfidf represents features and y_sentiment are labels (0=neg, 1=pos)
+# Assume X_tfidf (feature matrix) and y_sentiment (labels) are available
+# from the vectorization step and your data labeling process.
 
-# y_sentiment = np.array([1, 0, 1, 1]) # Dummy sentiment labels for the corpus
+import numpy as np # Needed for the example label array
+from sklearn.linear_model import LogisticRegression
 
-# You would then train a classifier like:
-# from sklearn.linear_model import LogisticRegression
-# model = LogisticRegression()
+# Example dummy labels (replace with actual data)
+y_sentiment = np.array([1, 0, 1, 1]) 
+
+# --- Classifier Training ---
+# Make sure X_tfidf and y_sentiment are defined and have compatible shapes
+# X_tfidf = ... # Feature matrix from TfidfVectorizer
+model = LogisticRegression()
+# Ensure X_tfidf and y_sentiment are correctly defined before fitting
 # model.fit(X_tfidf, y_sentiment)
+# print("Model trained successfully (conceptually).")
+
+# --- Prediction on New Data ---
+# Assume 'new_text_vectorized' is the TF-IDF vector for new text input
+# new_text_vectorized = ... # TF-IDF vector of the text to predict
+# Ensure the model is trained and new_text_vectorized is defined
 # predictions = model.predict(new_text_vectorized)
+# print(f"Predicted sentiment for new text: {predictions}")
 ```
 
 ## Named Entity Recognition (NER)
@@ -157,18 +171,24 @@ One of the most common NLP tasks.
 **Conceptual spaCy Example:**
 
 ```python
-# import spacy
+import spacy
 
 # Load a pre-trained spaCy model (e.g., English core small)
+# Make sure you have the model downloaded: python -m spacy download en_core_web_sm
 # nlp = spacy.load("en_core_web_sm") 
 
-# text_to_analyze = "Apple Inc. is looking at buying U.K. startup for $1 billion in London."
+# Define the text to analyze
+text_to_analyze = "Apple Inc. is looking at buying U.K. startup for $1 billion in London."
+
+# Process the text with the loaded spaCy model
+# Ensure the 'nlp' model is loaded before processing
 # doc = nlp(text_to_analyze)
 
-# print("\nNamed Entities:")
+print("\nNamed Entities (Conceptual - requires model loading):")
+# Ensure 'doc' is defined (i.e., model loaded and text processed)
 # for ent in doc.ents:
 #     print(f"- Entity: {ent.text}, Label: {ent.label_}") 
-#     # Expected Output might include: Apple Inc. (ORG), U.K. (GPE), $1 billion (MONEY), London (GPE)
+    # Expected Output might include: Apple Inc. (ORG), U.K. (GPE), $1 billion (MONEY), London (GPE)
 ```
 
 ## Introduction to Word Embeddings

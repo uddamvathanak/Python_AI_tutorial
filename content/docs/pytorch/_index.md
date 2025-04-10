@@ -1,6 +1,7 @@
 ---
 title: "4. Introduction to Neural Networks with PyTorch"
 weight: 40
+math: true # Enable LaTeX rendering for this page
 ---
 
 Welcome to Module 4! We now transition from classical machine learning with scikit-learn to the foundations of **Deep Learning**. Neural Networks are powerful models inspired by the structure of the human brain, capable of learning complex patterns. **PyTorch** is a leading open-source deep learning framework known for its flexibility and Pythonic feel, widely used in both research and industry.
@@ -23,14 +24,14 @@ Copy the code examples into your Jupyter Notebook environment ([Google Colab](ht
 
 The simplest unit in a neural network is often inspired by the **Perceptron**. Conceptually, it takes multiple inputs, computes a weighted sum, adds a bias, and then passes the result through an **activation function**.
 
-*   **Weighted Sum + Bias:** \( z = (\sum_{i} w_i x_i) + b \) (where \(x_i\) are inputs, \(w_i\) are weights, \(b\) is bias)
+*   **Weighted Sum + Bias:** $ z = (\sum_{i} w_i x_i) + b $ (where $x_i$ are inputs, $w_i$ are weights, $b$ is bias)
 *   **Activation Function:** Introduces non-linearity into the model, allowing it to learn complex relationships beyond simple linear combinations. Without non-linear activation functions, a deep neural network would just behave like a single linear layer.
 
 **Common Activation Functions:**
 
-*   **Sigmoid:** Squashes values between 0 and 1. \( \sigma(z) = \frac{1}{1 + e^{-z}} \). Often used in the output layer for binary classification.
-*   **ReLU (Rectified Linear Unit):** \( \text{ReLU}(z) = \max(0, z) \). Very popular for hidden layers due to its simplicity and efficiency. It outputs the input directly if positive, otherwise, it outputs zero.
-*   **Tanh (Hyperbolic Tangent):** Squashes values between -1 and 1. \( \tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} \).
+*   **Sigmoid:** Squashes values between 0 and 1. $ \sigma(z) = \frac{1}{1 + e^{-z}} $. Often used in the output layer for binary classification.
+*   **ReLU (Rectified Linear Unit):** $ \text{ReLU}(z) = \max(0, z) $. Very popular for hidden layers due to its simplicity and efficiency. It outputs the input directly if positive, otherwise, it outputs zero.
+*   **Tanh (Hyperbolic Tangent):** Squashes values between -1 and 1. $ \tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} $.
 *   **Softmax:** Used in the output layer for multi-class classification. Converts a vector of scores into a probability distribution (outputs sum to 1).
 
 {{< callout type="tip" >}}

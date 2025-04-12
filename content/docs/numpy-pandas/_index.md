@@ -359,4 +359,4 @@ NumPy provides the foundation for numerical computing with its efficient arrays,
 *   **[Seaborn Documentation](https://seaborn.pydata.org/):** Tutorials and examples for statistical visualization.
 *   **[Python Data Science Handbook by Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/):** An excellent online book covering NumPy, Pandas, Matplotlib, and more.
 
-**Next:** Ready to build predictive models? Proceed to [Module 3: Machine Learning Fundamentals with scikit-learn](/docs/sklearn/). 
+**Next:** Ready to build predictive models? Proceed to [Module 3: Machine Learning Fundamentals with scikit-learn](/Python_AI_tutorial/docs/sklearn/). 

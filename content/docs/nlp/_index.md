@@ -230,4 +230,4 @@ You've learned the initial steps for preparing text data (preprocessing, tokeniz
 *   **[Stanford CS224n: NLP with Deep Learning Lectures](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z):** University-level course lectures covering modern NLP in depth.
 *   **[Jay Alammar's Blog (Illustrated NLP posts)](https://jalammar.github.io/):** Visual explanations of concepts like Word2Vec and Transformers.
 
-**Next:** Let's explore how AI can 'see'. Proceed to [Module 6: Computer Vision Essentials](/docs/cv/). 
+**Next:** Let's explore how AI can 'see'. Proceed to [Module 6: Computer Vision Essentials](/Python_AI_tutorial/docs/cv/). 

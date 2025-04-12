@@ -267,4 +267,4 @@ For further learning or different perspectives on these fundamental concepts, ch
 *   **[Codecademy - Learn Python 3](https://www.codecademy.com/learn/learn-python-3):** Offers interactive exercises for learning Python syntax.
 *   **[freeCodeCamp - Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/):** Includes a comprehensive Python curriculum often used for data science foundations.
 
-**Next:** Ready to handle data efficiently? Proceed to [Module 2: Data Wrangling & Analysis: NumPy & Pandas](/docs/numpy-pandas/). 
+**Next:** Ready to handle data efficiently? Proceed to [Module 2: Data Wrangling & Analysis: NumPy & Pandas](/Python_AI_tutorial/docs/numpy-pandas/). 

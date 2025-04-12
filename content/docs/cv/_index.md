@@ -245,4 +245,4 @@ You've explored the fundamentals of Computer Vision, starting with basic image p
 *   **[Learn OpenCV Blog](https://learnopencv.com/):** Tutorials on various CV and deep learning topics.
 *   **[Roboflow Blog](https://blog.roboflow.com/):** Focuses on practical aspects of dataset creation and model deployment for CV.
 
-**Next:** Let's bring many of these concepts together by looking at a practical project implementation in [Module 7: Practical AI Project Implementations](/docs/project/). 
+**Next:** Let's bring many of these concepts together by looking at a practical project implementation in [Module 7: Practical AI Project Implementations](/Python_AI_tutorial/docs/project/). 

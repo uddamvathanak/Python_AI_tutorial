@@ -285,4 +285,4 @@ You've learned the fundamental concepts differentiating supervised (classificati
 *   **[Introduction to Machine Learning with Python by Andreas C. Müller & Sarah Guido](https://www.oreilly.com/library/view/introduction-to-machine/9781449369485/):** A practical book focusing heavily on scikit-learn.
 *   **[StatQuest: Machine Learning Playlist (YouTube)](https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF):** Clear visual explanations of many ML concepts.
 
-**Next:** Let's dive deeper into a powerful class of models - Neural Networks! Proceed to [Module 4: Introduction to Neural Networks with PyTorch](/docs/pytorch/). 
+**Next:** Let's dive deeper into a powerful class of models - Neural Networks! Proceed to [Module 4: Introduction to Neural Networks with PyTorch](/Python_AI_tutorial/docs/pytorch/). 

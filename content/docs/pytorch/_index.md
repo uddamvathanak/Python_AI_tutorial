@@ -210,4 +210,4 @@ You've been introduced to the fundamental building blocks of neural networks: pe
 *   **[3Blue1Brown - Neural Networks (YouTube Playlist)](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi):** Fantastic visual intuition for how neural networks work and learn.
 *   **[fast.ai Course](https://course.fast.ai/):** Practical deep learning course using PyTorch (and their own library built on top).
 
-**Next:** Let's shift focus to processing language data. Proceed to [Module 5: Natural Language Processing (NLP) Essentials](/docs/nlp/). 
+**Next:** Let's shift focus to processing language data. Proceed to [Module 5: Natural Language Processing (NLP) Essentials](/Python_AI_tutorial/docs/nlp/). 

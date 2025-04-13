@@ -5,3 +5,15 @@ resources/
 
 # Editor
 .vscode/
+data_for_project/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+.jupyter/

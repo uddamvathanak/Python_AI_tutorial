@@ -70,3 +70,22 @@ params:
   editURL:
     enable: false
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+
+  # Enable comments with giscus
+  comments:
+    enable: true
+    type: giscus
+    
+    # giscus configuration (replace with your own repository and category)
+    giscus:
+      repo: "uddamvathanak/Python_AI_tutorial"
+      repoId: "R_kgDOOUu__g"
+      category: "General"
+      categoryId: "DIC_kwDOOUu__s4CpFEO"
+      mapping: "pathname"
+      strict: "0"
+      reactionsEnabled: "1"
+      emitMetadata: "0"
+      inputPosition: "bottom"
+      theme: "preferred_color_scheme"
+      lang: "en"

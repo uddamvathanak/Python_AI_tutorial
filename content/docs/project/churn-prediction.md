@@ -5,7 +5,7 @@ weight: 10
 
 ## Introduction
 
-In the competitive telecommunications industry, keeping existing customers is just as crucial as acquiring new ones. Customer churn—when customers stop doing business with a company—represents a significant threat to revenue stability and growth.
+In the competitive telecommunications industry, keeping existing customers is just as crucial as acquiring new ones. Customer churn, when customers stop doing business with a company, represents a significant threat to revenue stability and growth.
 
 Consider this: **acquiring a new customer costs 5-25 times more than retaining an existing one**, yet many companies focus disproportionately on acquisition rather than retention. This tutorial demonstrates how data science can transform customer retention from a reactive scramble into a proactive strategy.
 
@@ -82,7 +82,7 @@ Analysis of internet service types reveals:
 
 Notable tenure insights:
 - **Churn risk decreases dramatically after the first 12 months**, creating a critical "danger zone" for new customers
-- The difference in tenure distribution between churned and loyal customers is stark—median tenure for churned customers is just 10 months vs. 38 months for loyal customers
+- The difference in tenure distribution between churned and loyal customers is stark; median tenure for churned customers is just 10 months vs. 38 months for loyal customers
 - This creates a clear window for targeted interventions in the early relationship
 
 ![Charges vs Tenure](/images/project/churn/charges_vs_tenure.png)
@@ -106,7 +106,7 @@ The distributions of Monthly and Total Charges reveal important insights:
 ![Service Usage](/images/project/churn/service_usage.png)
 
 Key findings about service usage:
-- **Protective and support services act as "churn shields"** - customers with technical support are 33% less likely to churn
+- **Protective and support services act as "churn shields"**; customers with technical support are 33% less likely to churn
 - Services that create dependencies (backup, security) significantly increase retention
 - Optional entertainment services (streaming TV, movies) have minimal retention impact
 - This suggests investing in support quality and security features may have higher ROI than entertainment options
@@ -174,7 +174,7 @@ SHAP (SHapley Additive exPlanations) analysis transforms our model from a "black
 
 1. **Tenure**: This is the dominant predictor, with every additional month decreasing churn probability by a measurable amount. The first 12 months show the steepest decline in risk.
 
-2. **Monthly Charges**: Higher charges consistently increase churn risk, but the effect is moderated by tenure—long-term customers are less price-sensitive.
+2. **Monthly Charges**: Higher charges consistently increase churn risk, but the effect is moderated by tenure; long-term customers are less price-sensitive.
 
 3. **Total Charges**: Lower total charges (often indicating newer customers) correlate with higher churn risk, reinforcing the critical early relationship period.
 
@@ -182,7 +182,7 @@ SHAP (SHapley Additive exPlanations) analysis transforms our model from a "black
 
 5. **Internet Service**: Fiber optic service increases churn probability by 15 percentage points on average compared to DSL, suggesting quality or expectations issues.
 
-These insights go beyond confirmation of what we suspected—they provide precise quantification of effects and reveal interaction patterns that inform targeted intervention design.
+These insights go beyond confirmation of what we suspected; they provide precise quantification of effects and reveal interaction patterns that inform targeted intervention design.
 
 ## Business Recommendations
 

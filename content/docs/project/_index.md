@@ -17,4 +17,14 @@ Each sub-page within this section will detail a specific mini-project, showcasin
 
 Navigate through the available projects in the sidebar menu to see them in action.
 
-*(Sub-pages for specific projects will be added here)* 
+## Available Projects
+
+### [Customer Churn Prediction](/docs/project/churn-prediction)
+A telecommunications customer churn analysis and prediction project that demonstrates:
+- Exploratory data analysis and visualization
+- Feature engineering and selection
+- Building and evaluating classification models
+- Interpreting model results with SHAP
+- Translating insights into business recommendations with ROI estimates
+
+*Additional projects will be added as they are developed.* 

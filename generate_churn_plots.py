@@ -217,19 +217,19 @@ def plot_service_usage():
     service_cols = ['PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 
                    'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies']
     
-    # Create figure with enough height for all service options
-    plt.figure(figsize=(14, 14))
+    # Create figure with enough height for all service options and more width for labels
+    plt.figure(figsize=(16, 14))  # Increased width from 14 to 16
     
     # Define service categories and colors
     service_categories = {
         'Basic': ['PhoneService', 'MultipleLines', 'InternetService'],
-        'Security': ['OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport'],
+        'Protection & Support': ['OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport'],
         'Entertainment': ['StreamingTV', 'StreamingMovies']
     }
     
     category_colors = {
         'Basic': '#3498db',  # Blue
-        'Security': '#2ecc71',  # Green
+        'Protection & Support': '#2ecc71',  # Green
         'Entertainment': '#e74c3c'  # Red
     }
     
@@ -238,18 +238,21 @@ def plot_service_usage():
     y_ticks = []
     y_labels = []
     category_separators = []
+    category_avg_churn = {}
     
     # Process each service column
     for category, cols in service_categories.items():
         category_start = y_pos
+        category_churn_rates = []
         
         for col in cols:
             # Get churn rate for each value in this column
             for val in df[col].unique():
-                if pd.notna(val):  # Skip NaN values
+                if pd.notna(val) and val == 'Yes':  # Focus on customers who have the service
                     # Calculate churn rate for this specific value
                     subset = df[df[col] == val]
                     churn_rate = subset[subset['Churn'] == 'Yes'].shape[0] / subset.shape[0] * 100
+                    category_churn_rates.append(churn_rate)
                     
                     # Plot the bar
                     bar = plt.barh(y_pos, churn_rate, color=category_colors[category], alpha=0.7)
@@ -263,17 +266,31 @@ def plot_service_usage():
                     y_labels.append(f"{val} ({col})")
                     
                     y_pos += 1
+        
+        # Calculate average churn rate for category
+        if category_churn_rates:
+            category_avg_churn[category] = sum(category_churn_rates) / len(category_churn_rates)
                     
         # Add category separator
         if y_pos > category_start:
             category_separators.append((category_start + y_pos) / 2)
             y_pos += 1.5  # Add space between categories
     
+    # Set the x-axis limit to provide more space for annotations
+    plt.xlim(0, max(df.groupby(service_cols)['Churn'].apply(lambda x: (x == 'Yes').mean() * 100).max() + 15, 50))
+    
     # Draw category separators and labels
     for i, pos in enumerate(category_separators):
         category = list(service_categories.keys())[i]
         plt.axhline(pos - 0.75, color='gray', linestyle='--', alpha=0.3, xmax=0.95)
-        plt.text(plt.xlim()[1] * 0.96, pos, category, 
+        
+        # Add category label with average churn rate
+        if category in category_avg_churn:
+            label_text = f"{category} (avg: {category_avg_churn[category]:.1f}%)"
+        else:
+            label_text = category
+            
+        plt.text(plt.xlim()[1] * 0.96, pos, label_text, 
                  ha='right', va='center', fontsize=14, fontweight='bold', 
                  bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.5'))
         
@@ -281,7 +298,7 @@ def plot_service_usage():
     plt.yticks(y_ticks, y_labels)
     
     # Add labels and title
-    plt.xlabel('Churn Rate (%)', fontsize=14)
+    plt.xlabel('Churn Rate (%)', fontsize=14, labelpad=10)  # Added more padding
     plt.title('Churn Rate by Service Options', fontsize=16, pad=20)
     
     # Add a grid for better readability
@@ -292,15 +309,29 @@ def plot_service_usage():
     tech_no = df[df['TechSupport'] == 'No']['Churn'].apply(lambda x: x == 'Yes').mean() * 100
     reduction = ((tech_no - tech_yes) / tech_no) * 100
     
-    # Add tech support annotation
-    plt.figtext(0.5, 0.01, f"Technical Support reduces churn by {reduction:.1f}%", 
+    # Calculate entertainment vs protection impact
+    if 'Entertainment' in category_avg_churn and 'Protection & Support' in category_avg_churn:
+        entertainment_avg = category_avg_churn['Entertainment']
+        protection_avg = category_avg_churn['Protection & Support']
+        impact_diff = protection_avg - entertainment_avg
+        
+        # Add comparison annotation with more space
+        plt.figtext(0.5, 0.07, 
+                  f"Entertainment services have {abs(impact_diff):.1f}% less impact on churn reduction\ncompared to protection & support services",
+                  ha="center", fontsize=12, bbox={"facecolor":"lightgray", "alpha":0.2, "pad":5})
+    
+    # Add tech support annotation with more space
+    plt.figtext(0.5, 0.02, f"Technical Support reduces churn by {reduction:.1f}%", 
                ha="center", fontsize=12, bbox={"facecolor":"orange", "alpha":0.2, "pad":5})
     
-    # Save plot
-    plt.tight_layout()
+    # Adjust layout with more bottom space
+    plt.subplots_adjust(bottom=0.2, right=0.9)  # Increased bottom margin from 0.15 to 0.2
+    
+    # Save plot with tight_layout but with specified pad value
+    plt.tight_layout(pad=2.0)  # Increased padding from default
     plt.savefig(os.path.join(output_dir, 'service_usage.png'), dpi=300, bbox_inches='tight')
     plt.close()
-    print("Service usage plot saved")
+    print("Service usage plot saved with entertainment impact comparison")
 
 # 8. Demographics Plot
 def plot_demographics():
@@ -325,10 +356,10 @@ def plot_demographics():
         # Add title and labels
         if col == 'SeniorCitizenStr':
             axs[i].set_title('Senior Citizen Status', fontsize=14)
-            axs[i].set_xlabel('Is Senior Citizen', fontsize=12)
+            axs[i].set_xlabel('Is Senior Citizen', fontsize=12, labelpad=10)  # Added more padding
         else:
             axs[i].set_title(col.capitalize(), fontsize=14)
-            axs[i].set_xlabel(col, fontsize=12)
+            axs[i].set_xlabel(col, fontsize=12, labelpad=10)  # Added more padding
         
         axs[i].set_ylabel('Percentage (%)', fontsize=12)
         axs[i].legend(['No Churn', 'Churn'], fontsize=10)
@@ -354,8 +385,9 @@ def plot_demographics():
     # Super title
     plt.suptitle('Churn Rate by Demographic Factors', fontsize=16, y=0.95)
     
-    # Save plot
-    plt.tight_layout()
+    # Save plot with better spacing
+    plt.tight_layout(pad=3.0)  # Increased padding from default
+    plt.subplots_adjust(bottom=0.15)  # Added explicit bottom adjustment
     plt.savefig(os.path.join(output_dir, 'demographics.png'), dpi=300, bbox_inches='tight')
     plt.close()
     print("Demographics plot saved")
@@ -393,7 +425,7 @@ def plot_model_performance():
     # Plot Confusion Matrix
     sns.heatmap(cm_normalized, annot=cm, fmt='d', cmap='Blues', cbar=False, ax=ax1,
                 annot_kws={"size": 16}, square=True)
-    ax1.set_xlabel('Predicted label', fontsize=14)
+    ax1.set_xlabel('Predicted label', fontsize=14, labelpad=10)  # Added more padding
     ax1.set_ylabel('True label', fontsize=14)
     ax1.set_title('Confusion Matrix', fontsize=16)
     ax1.set_xticklabels(['Not Churned', 'Churned'], fontsize=12)
@@ -411,7 +443,7 @@ def plot_model_performance():
     ax2.plot([0, 1], [0, 1], color='grey', lw=1, linestyle='--')
     ax2.set_xlim([0.0, 1.0])
     ax2.set_ylim([0.0, 1.05])
-    ax2.set_xlabel('False Positive Rate', fontsize=14)
+    ax2.set_xlabel('False Positive Rate', fontsize=14, labelpad=10)  # Added more padding
     ax2.set_ylabel('True Positive Rate', fontsize=14)
     ax2.set_title('Receiver Operating Characteristic (ROC)', fontsize=16)
     ax2.legend(loc="lower right", fontsize=12)
@@ -420,8 +452,9 @@ def plot_model_performance():
     # Overall title
     plt.suptitle('Gradient Boosting Model Performance', fontsize=18, y=1.05)
     
-    # Save plot
-    plt.tight_layout()
+    # Save plot with better spacing
+    plt.tight_layout(pad=3.0)  # Increased padding from default
+    plt.subplots_adjust(bottom=0.15)  # Added explicit bottom adjustment
     plt.savefig(os.path.join(output_dir, 'model_performance.png'), dpi=300, bbox_inches='tight')
     plt.close()
     print("Model performance plot saved")
@@ -450,7 +483,7 @@ def plot_shap_summary():
                 ha='left', va='center', fontsize=12)
     
     # Add labels and title
-    plt.xlabel('Mean |SHAP Value| (impact on model output)', fontsize=14)
+    plt.xlabel('Mean |SHAP Value| (impact on model output)', fontsize=14, labelpad=10)  # Added more padding
     plt.ylabel('Features', fontsize=14)
     plt.title('SHAP Feature Importance', fontsize=16, pad=20)
     
@@ -462,8 +495,9 @@ def plot_shap_summary():
     # Add a grid for better readability
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     
-    # Save plot
-    plt.tight_layout()
+    # Save plot with better spacing
+    plt.tight_layout(pad=3.0)  # Increased padding from default
+    plt.subplots_adjust(bottom=0.15)  # Added explicit bottom adjustment
     plt.savefig(os.path.join(output_dir, 'shap_summary.png'), dpi=300, bbox_inches='tight')
     plt.close()
     print("SHAP summary plot saved")

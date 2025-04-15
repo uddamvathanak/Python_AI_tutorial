@@ -116,7 +116,7 @@ Key findings about service usage:
 ![Demographics](/images/project/churn/demographics.png)
 
 Notable demographic insights:
-- Senior citizens churn at a substantially higher rate (+18.1%) than non-seniors
+- Senior citizens churn at a substantially higher rate (+13%) than non-seniors
 - Single customers without dependents show significantly higher churn propensity
 - Household composition impacts retention more than gender
 - This suggests tailoring retention efforts around household needs rather than individual characteristics

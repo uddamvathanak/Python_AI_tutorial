@@ -19,7 +19,7 @@ Navigate through the available projects in the sidebar menu to see them in actio
 
 ## Available Projects
 
-### [Customer Churn Prediction](/docs/project/churn-prediction)
+### [Customer Churn Prediction](/Python_AI_tutorial/docs/project/churn-prediction)
 A telecommunications customer churn analysis and prediction project that demonstrates:
 - Exploratory data analysis and visualization
 - Feature engineering and selection

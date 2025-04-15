@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import roc_curve, auc, confusion_matrix
 import matplotlib.gridspec as gridspec
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 # Set plot style
 plt.style.use('seaborn-v0_8-whitegrid')
@@ -394,43 +398,79 @@ def plot_demographics():
 
 # 9. Model Performance Plot
 def plot_model_performance():
-    # Instead of generating synthetic predictions, we'll create a confusion matrix
-    # that matches the documented metrics in the markdown
+    # We'll train an actual Gradient Boosting model to get realistic metrics
+    print("Training actual model for performance metrics...")
     
-    # Calculate total number of samples
-    n_samples = len(df)
-    n_churned = int(n_samples * 0.265)  # 26.5% are churned
-    n_not_churned = n_samples - n_churned
+    # Prepare the data
+    # Create a copy of the dataframe for preprocessing
+    model_df = df.copy()
     
-    # Metrics from the markdown:
-    # - Not Churned: 86% recall, 83% precision
-    # - Churned: 83% recall, 86% precision
-    # - Overall accuracy: 80.2%
-    # - AUC-ROC: 0.84
+    # Save the target before one-hot encoding
+    # Label encode target variable
+    le = LabelEncoder()
+    model_df['Churn_encoded'] = le.fit_transform(model_df['Churn'])
     
-    # Create confusion matrix based on these metrics
-    recall_not_churned = 0.86
-    recall_churned = 0.83
+    # Remove customerID and original Churn column from features
+    features_df = model_df.drop(['customerID', 'Churn'], axis=1)
     
-    # True positives and true negatives
-    tn = int(n_not_churned * recall_not_churned)
-    tp = int(n_churned * recall_churned)
+    # Get categorical columns (excluding the target)
+    categorical_cols = features_df.select_dtypes(include=['object']).columns.tolist()
     
-    # False negatives and false positives
-    fn = n_churned - tp
-    fp = n_not_churned - tn
+    # One-hot encode categorical features
+    features_encoded = pd.get_dummies(features_df, columns=categorical_cols, drop_first=True)
     
-    # Final confusion matrix
-    cm = np.array([[tn, fp], [fn, tp]])
+    # Now we have a properly encoded feature set
+    X = features_encoded.drop(['Churn_encoded'], axis=1)
+    y = model_df['Churn_encoded']
     
-    # Normalize for percentages
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+    
+    # Scale numerical features
+    scaler = StandardScaler()
+    numerical_cols = ['tenure', 'MonthlyCharges', 'TotalCharges']
+    X_train[numerical_cols] = scaler.fit_transform(X_train[numerical_cols])
+    X_test[numerical_cols] = scaler.transform(X_test[numerical_cols])
+    
+    # Train Gradient Boosting model
+    gb_model = GradientBoostingClassifier(
+        n_estimators=100,
+        learning_rate=0.1,
+        max_depth=4,
+        random_state=42
+    )
+    
+    gb_model.fit(X_train, y_train)
+    
+    # Get predictions
+    y_pred_proba = gb_model.predict_proba(X_test)[:, 1]
+    y_pred = (y_pred_proba >= 0.5).astype(int)
+    
+    # Calculate metrics
+    accuracy = accuracy_score(y_test, y_pred)
+    recall_not_churned = recall_score(y_test, y_pred, pos_label=0)
+    recall_churned = recall_score(y_test, y_pred, pos_label=1)
+    precision_not_churned = precision_score(y_test, y_pred, pos_label=0)
+    precision_churned = precision_score(y_test, y_pred, pos_label=1)
+    
+    # Compute ROC curve and AUC
+    fpr, tpr, _ = roc_curve(y_test, y_pred_proba)
+    roc_auc = auc(fpr, tpr)
+    
+    # Compute confusion matrix
+    cm = confusion_matrix(y_test, y_pred)
     cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     
-    # Create ROC curve points for an AUC of 0.84
-    # This is an approximation to create a curve with the target AUC
-    fpr = np.linspace(0, 1, 100)
-    tpr = np.power(fpr, 0.5)  # This creates a curve with AUC around 0.84
-    roc_auc = 0.84  # Explicitly set to match documentation
+    # Print metrics to be updated in markdown
+    print("\n===== MODEL PERFORMANCE METRICS =====")
+    print(f"Overall Accuracy: {accuracy:.3f}")
+    print(f"AUC-ROC Score: {roc_auc:.3f}")
+    print("Class-specific Performance:")
+    print(f"  Not Churned: {recall_not_churned*100:.1f}% recall, {precision_not_churned*100:.1f}% precision")
+    print(f"  Churned: {recall_churned*100:.1f}% recall, {precision_churned*100:.1f}% precision")
+    print("Confusion Matrix:")
+    print(cm)
+    print("=====================================\n")
     
     # Create plot with two subplots
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
@@ -470,7 +510,7 @@ def plot_model_performance():
     plt.subplots_adjust(bottom=0.15)
     plt.savefig(os.path.join(output_dir, 'model_performance.png'), dpi=300, bbox_inches='tight')
     plt.close()
-    print("Model performance plot saved with metrics matching documentation")
+    print(f"Model performance plot saved with calculated AUC: {roc_auc:.2f}")
 
 # 10. SHAP Summary Plot (simulated)
 def plot_shap_summary():

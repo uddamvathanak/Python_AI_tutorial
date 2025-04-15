@@ -94,3 +94,7 @@ params:
       inputPosition: "bottom"
       theme: "preferred_color_scheme"
       lang: "en"
+
+services:
+  googleAnalytics:
+    id: G-C89C1V579F

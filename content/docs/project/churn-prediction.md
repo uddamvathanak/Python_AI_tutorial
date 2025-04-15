@@ -65,16 +65,16 @@ The overall distribution of customer churn shows:
 ![Contract Distribution](/images/project/churn/contract_distribution.png)
 
 Key findings about contract types:
-- **Month-to-month contracts show a dramatically higher churn rate (43%)** compared to one-year (11%) and two-year contracts (3%)
+- **Month-to-month contracts show a dramatically higher churn rate (42.7%)** compared to one-year (11.3%) and two-year contracts (2.8%)
 - The flexibility that appeals to customers initially becomes a low barrier to exit later
 - Long-term contracts create a powerful retention effect, suggesting that incentivizing contract commitments could be a high-impact intervention
 
 ![Internet Service Impact](/images/project/churn/churn_by_internet.png)
 
 Analysis of internet service types reveals:
-- Fiber optic customers churn at nearly **double the rate (42%)** of DSL customers (19%), despite paying premium prices
+- Fiber optic customers churn at nearly **double the rate (41.9%)** of DSL customers (19.0%), despite paying premium prices
 - This counterintuitive finding suggests potential service quality or value perception issues with the fiber offering
-- Customers with no internet service show remarkably low churn (7%), indicating different engagement patterns
+- Customers with no internet service show remarkably low churn (7.4%), indicating different engagement patterns
 
 ### 3. Customer Tenure and Charges
 
@@ -92,7 +92,7 @@ The relationship between charges and tenure reveals:
 - Customers become increasingly price-tolerant as their relationship with the company matures
 - Long-tenured customers with high charges show surprisingly low churn rates, indicating value recognition
 
-### 1. Financial Patterns
+### 4. Financial Patterns
 
 ![Financial Distributions](/images/project/churn/financial_dist.png)
 
@@ -101,22 +101,22 @@ The distributions of Monthly and Total Charges reveal important insights:
 - High monthly charges correlate strongly with increased churn probability, particularly among newer customers
 - Total Charges distribution highlights the large segment of newer, lower-value customers who haven't yet reached their full revenue potential
 
-### 2. Service Usage Patterns
+### 5. Service Usage Patterns
 
 ![Service Usage](/images/project/churn/service_usage.png)
 
 Key findings about service usage:
-- **Protective and support services act as "churn shields"**; customers with technical support are 33% less likely to churn
+- **Protective and support services act as "churn shields"**; customers with technical support are 63.6% less likely to churn
 - Services that create dependencies (backup, security) significantly increase retention
 - Optional entertainment services (streaming TV, movies) have minimal retention impact
 - This suggests investing in support quality and security features may have higher ROI than entertainment options
 
-### 3. Customer Demographics
+### 6. Customer Demographics
 
 ![Demographics](/images/project/churn/demographics.png)
 
 Notable demographic insights:
-- Senior citizens churn at a substantially higher rate (+19%) than non-seniors
+- Senior citizens churn at a substantially higher rate (+18.1%) than non-seniors
 - Single customers without dependents show significantly higher churn propensity
 - Household composition impacts retention more than gender
 - This suggests tailoring retention efforts around household needs rather than individual characteristics
@@ -249,5 +249,5 @@ This analysis demonstrates how data science transforms reactive customer retenti
 The greatest value comes not from prediction alone, but from the systematic translation of data insights into business actions that address the root causes of customer departures.
 
 {{< callout type="tip" >}}
-Remember that the goal isn't just to predict churn, but to prevent it. Each percentage point of reduced churn represents real customers continuing their relationship with your company—and real revenue preserved.
+Remember that the goal isn't just to predict churn, but to prevent it. Each percentage point of reduced churn represents real customers continuing their relationship with your company and real revenue preserved.
 {{< /callout >}} 

@@ -201,6 +201,9 @@ A specialized task focusing on identifying or verifying individuals based on the
     3.  **Feature Extraction:** Extract a numerical feature vector (embedding) that uniquely represents the face's characteristics. Deep learning models (like FaceNet, ArcFace) are state-of-the-art here.
     4.  **Matching:** Compare the extracted feature vector against vectors of known individuals in a database using distance metrics (e.g., Euclidean distance, cosine similarity).
 
+![Face Recognition Pipeline](/images/cv/face_recognition.png)
+*A visual representation of the typical face recognition pipeline: detection, alignment, feature extraction, and matching.*
+
 {{< callout type="tip" >}}
 Libraries like `face_recognition`, `DeepFace`, or components within OpenCV can be used for face detection and recognition tasks, often leveraging pre-trained deep learning models.
 {{< /callout >}}

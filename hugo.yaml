@@ -59,6 +59,11 @@ menu:
     #     icon: x-twitter
 
 params:
+
+# Display the last modification date
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
+  
   navbar:
     displayTitle: true
     displayLogo: false

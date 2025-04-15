@@ -1,0 +1,17 @@
+Statistic,Value
+Overall churn distribution,"Not churned: 73.5%, Churned: 26.5%"
+Month-to-month contract churn rate,42.7%
+One-year contract churn rate,11.3%
+Two-year contract churn rate,2.8%
+Fiber optic churn rate,41.9%
+DSL churn rate,19.0%
+No internet churn rate,7.4%
+Fiber to DSL ratio,2.21x
+Median tenure (churned),10.0 months
+Median tenure (not churned),38.0 months
+Tech support churn rate,15.2%
+No tech support churn rate,41.6%
+Tech support churn reduction,63.6%
+Senior citizens churn rate,41.7%
+Non-seniors churn rate,23.6%
+Senior vs non-senior difference,+18.1%

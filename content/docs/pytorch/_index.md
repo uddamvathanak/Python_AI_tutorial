@@ -47,7 +47,7 @@ Also known as Multi-Layer Perceptrons (MLPs), these are the most basic type of a
 *   **Information Flow:** Data flows strictly in one direction – from the input layer, through the hidden layers, to the output layer – without loops (hence "feedforward").
 *   **Learning:** The network "learns" by adjusting the weights and biases of the connections between neurons during training to minimize the difference between its predictions and the actual target values.
 
-<img src=/Python_AI_tutorial/images/pytorch/nn.svg" alt="Simple Feedforward Network Diagram (Conceptual)" style="width: 100%;">
+![Pytorch Neural Network](/images/pytorch/nn.svg)
 
 ## Backpropagation and Gradient Descent
 
